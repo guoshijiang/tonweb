@@ -37,7 +37,7 @@ const tonweb = new TonWeb();
 
 const wallet = tonweb.wallet.create({publicKey});
 
-const address = await wallet.getAddress();
+const address = wallet.getAddress();
 
 const nonBounceableAddress = address.toString(true, true, false);
 
