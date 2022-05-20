@@ -23,7 +23,7 @@ async function init() {
 
     // Get wallet address
 
-    const walletAddress = await wallet.getAddress();
+    const walletAddress = wallet.getAddress();
     const WALLET_ADDRESS = walletAddress.toString(true, true, true);
     console.log('wallet address =', WALLET_ADDRESS);
 

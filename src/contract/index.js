@@ -15,11 +15,12 @@ class Contract {
     }
 
     /**
-     * @return {Promise<Address>}
+     * @return {Address}
      */
-    async getAddress() {
+    getAddress() {
         if (!this.address) {
-            this.address = (await this.createStateInit()).address;
+            const addr = this.createStateInit()
+            this.address =  addr["address"];
         }
         return this.address;
     }
@@ -44,13 +45,13 @@ class Contract {
 
     /**
      * @protected
-     * @return {Promise<{stateInit: Cell, address: Address, code: Cell, data: Cell}>}
+     * @return {stateInit: Cell, address: Address, code: Cell, data: Cell}
      */
-    async createStateInit() {
+    createStateInit() {
         const codeCell = this.createCodeCell();
         const dataCell = this.createDataCell();
         const stateInit = Contract.createStateInit(codeCell, dataCell);
-        const stateInitHash = await stateInit.hash();
+        const stateInitHash = stateInit.hash();
         const address = new Address(this.options.wc + ":" + bytesToHex(stateInitHash));
         return {
             stateInit: stateInit,

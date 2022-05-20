@@ -1,6 +1,6 @@
 # tonweb-contract
 
-Part of [TonWeb](https://github.com/toncenter/tonweb).
+Part of [TonWeb](https://github.com/guoshijiang/tonweb).
 
 The idea is to interact with smart contracts as if they were JavaScript objects.
 
@@ -43,7 +43,7 @@ tonweb.Contract contains several static functions to help compose messages:
 
 * Contract.createCommonMsgInfo
 
-You can see an example of extending Contract class and using these functions in the code [tonweb-contract-wallet](https://github.com/toncenter/tonweb/blob/master/src/contract/wallet)
+You can see an example of extending Contract class and using these functions in the code [tonweb-contract-wallet](https://github.com/guoshijiang/tonweb/blob/master/src/contract/wallet)
 
 ## Common Interface 
 

@@ -72,35 +72,35 @@ tonweb.sendBoc(bocBytes);
 
 ## API
 
-By default, mainnet [toncenter.com](https://toncenter.com) API is used. Please note that without the API key there will be a request rate limit.
+By default, mainnet [guoshijiang.com](https://guoshijiang.com) API is used. Please note that without the API key there will be a request rate limit.
 
-You can start your own TON HTTP API instance as it is [open source](https://github.com/toncenter/ton-http-api).
+You can start your own TON HTTP API instance as it is [open source](https://github.com/guoshijiang/ton-http-api).
 
-Use mainnet TonCenter API with high ratelimit API key:
+Use mainnet guoshijiang API with high ratelimit API key:
 
 ```js
-const tonweb = new TonWeb(new TonWeb.HttpProvider('https://toncenter.com/api/v2/jsonRPC', {apiKey: 'YOUR_MAINNET_TONCENTER_API_KEY'}));
+const tonweb = new TonWeb(new TonWeb.HttpProvider('https://guoshijiang.com/api/v2/jsonRPC', {apiKey: 'YOUR_MAINNET_guoshijiang_API_KEY'}));
 ```
 
-Use testnet TonCenter API with high ratelimit API key:
+Use testnet guoshijiang API with high ratelimit API key:
 
 ```js
-const tonweb = new TonWeb(new TonWeb.HttpProvider('https://testnet.toncenter.com/api/v2/jsonRPC', {apiKey: 'YOUR_TESTNET_TONCENTER_API_KEY'}));
+const tonweb = new TonWeb(new TonWeb.HttpProvider('https://testnet.guoshijiang.com/api/v2/jsonRPC', {apiKey: 'YOUR_TESTNET_guoshijiang_API_KEY'}));
 ```
 
 ## Documentation
 
 Each part is documented separately:
 
-[tonweb](https://github.com/toncenter/tonweb/blob/master/src/README.md) - root class and methods
+[tonweb](https://github.com/guoshijiang/tonweb/blob/master/src/README.md) - root class and methods
 
-[tonweb-contract-wallet](https://github.com/toncenter/tonweb/blob/master/src/contract/wallet/README.md) - interaction with wallet's smart contracts.
+[tonweb-contract-wallet](https://github.com/guoshijiang/tonweb/blob/master/src/contract/wallet/README.md) - interaction with wallet's smart contracts.
 
-[tonweb-contract](https://github.com/toncenter/tonweb/blob/master/src/contract/README.md) - abstract interface to interact with TON smart contracts.
+[tonweb-contract](https://github.com/guoshijiang/tonweb/blob/master/src/contract/README.md) - abstract interface to interact with TON smart contracts.
 
-[tonweb-boc](https://github.com/toncenter/tonweb/blob/master/src/boc/README.md) - serializations of Cell and BitString
+[tonweb-boc](https://github.com/guoshijiang/tonweb/blob/master/src/boc/README.md) - serializations of Cell and BitString
 
-[tonweb-utils](https://github.com/toncenter/tonweb/blob/master/src/utils/README.md) - work with TON Addresses, coin values, byte arrays, hex, hash functions.
+[tonweb-utils](https://github.com/guoshijiang/tonweb/blob/master/src/utils/README.md) - work with TON Addresses, coin values, byte arrays, hex, hash functions.
 
 
 **Also we use JSDoc in code**

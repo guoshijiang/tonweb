@@ -26,7 +26,7 @@ class WalletContract extends Contract {
                      * @return {Promise<number>}
                      */
                     call: async () => {
-                        const address = await this.getAddress();
+                        const address = this.getAddress();
                         let n = null;
                         try {
                             n = (await provider.call2(address.toString(), 'seqno')).toNumber();

@@ -6,10 +6,9 @@ const {
     crc32c,
     hexToBytes,
     readNBytesUIntFromArray,
-    sha256,
     bytesToHex
 } = require("../utils");
-
+const createHash = require('create-hash')
 const reachBocMagicPrefix = hexToBytes('B5EE9C72');
 const leanBocMagicPrefix = hexToBytes('68ff65f3');
 const leanBocMagicPrefixCRC = hexToBytes('acc3a728');
@@ -131,9 +130,8 @@ class Cell {
     /**
      * @return {Promise<Uint8Array>}
      */
-    async getRepr() {
+    getRepr() {
         const reprArray = [];
-
         reprArray.push(this.getDataWithDescriptors());
         for (let k in this.refs) {
             const i = this.refs[k];
@@ -141,7 +139,7 @@ class Cell {
         }
         for (let k in this.refs) {
             const i = this.refs[k];
-            reprArray.push(await i.hash());
+            reprArray.push(i.hash());
         }
         let x = new Uint8Array();
         for (let k in reprArray) {
@@ -151,13 +149,10 @@ class Cell {
         return x;
     }
 
-    /**
-     * @return {Promise<Uint8Array>}
-     */
-    async hash() {
+    hash() {
         return new Uint8Array(
-            await sha256(await this.getRepr())
-        );
+            createHash('sha256').update(this.getRepr()).digest()
+        )
     }
 
     /**
